@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reservas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Reservas - Restaurante</h1>
+                <p class="lead">Interaccion: directa: reservar desde la targeta o desde el formulario</p>
+        </header>
+
+        <main class="main">
+    <section class="panel">
+    <h2>Nueva Reserva</h2>
+            <form id="formReservation">
+            <label>Nombre
+                <input id="name" type="text" placeholder="Ej: Juan Perez" required>
+            </label>
+
+            <label>Contacto (tel o e-mail)
+                <input id="contact" type="text" placeholder="Ej: 0000000000" required>
+            </label>
+
+            <label>Fecha y hora
+                <input id="datatime" type="datetime-local" required>
+            </label>
+
+            <label>Mesa (numero)
+                <input id="table" type="number" min="1" max="12" value="1" required>
+            </label>
+
+            <div class="actions">
+                <button type="submit" class="btn">Guardar reserva</button>
+                <button id="clearBtn" type="button" class="btn outline">Limpiar</button>
+            </div>
+            </form>
+</section>
+
+<section class="panel">
+<h2>Mesas</h2>
+<div id="tables" class="tables"></div>
+</section>
+
+<section class="panel wide">
+<h2>Reporte de reservas</h2>
+
+    <div class="report-control">
+        <label>Desde
+            <input id="fromDate" type="date">
+        </label>
+
+        <label>Hasta
+            <input id="toDate" type="date">
+        </label>
+
+        <button id="btnShowReport" class="btn">Mostrar reporte</button>
+        <button id="btnPreviewCsv" class="btn outline">Previsualizar CSV</button>
+        <button id="btnExportCsv" class="btn primary">Exportar CSV</button>
+    </div>
+
+    <div id="reportArea" class="reportArea"></div>
+
+    <div id="csvPreview" class="csvPreview hidden">
+        <div class="csv-grid">
+            <div class="csv-list">
+                <h3>Reservas (vista rapida)</h3>
+                <div id="csvList"></div>
+            </div>
+            <div class="csv-text">
+                <h3>CSV Preview</h3>
+                <pre id="csvText"></pre>
+                <div class="actions">
+                    <button id="btnDownloadFromPreview" class="btn primary">Descargar CSV</button>
+                    <button id="btnClosePreview" class="btn outline">cerrar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+            </section>
+        </main>
+        <footer>
+            <small>Proyecto educativo.</small>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
